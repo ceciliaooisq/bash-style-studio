@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bash Style Studio — Shop the Look</title>
+<meta name="description" content="Pinterest-inspired outfit ideas curated from real Bash Clothing products.">
+<style>
+:root{--ink:#292622;--muted:#77716b;--paper:#fbf8f4;--pink:#ead6d1;--line:#e9e1da;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+header{padding:22px 5vw 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:16px}
+.logo{font-family:Georgia,serif;font-size:25px;letter-spacing:.18em}.logo small{display:block;font:10px Arial;letter-spacing:.28em;text-align:center;margin-top:5px}
+header a,.textlink{color:inherit;text-decoration:none;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.hero{padding:58px 5vw 34px;text-align:center;background:linear-gradient(135deg,#f4e8e2,#fbf8f4 60%,#e9e4dc)}
+.kicker{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#876b63}
+h1{font:clamp(38px,7vw,76px)/.98 Georgia,serif;font-weight:400;margin:17px auto 16px;max-width:850px}
+.hero p{max-width:550px;margin:0 auto 22px;color:#6d625c;line-height:1.7;font-size:14px}
+.pills{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:20px 5vw}
+.pill{border:1px solid #d8c9c0;background:transparent;padding:10px 14px;border-radius:30px;cursor:pointer;font-size:12px;color:var(--ink)}
+.pill.active,.pill:hover{background:var(--ink);color:white;border-color:var(--ink)}
+main{padding:8px 5vw 55px;max-width:1500px;margin:auto}
+.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:15px;margin:18px 0 20px}
+h2{font:32px Georgia,serif;font-weight:400;margin:0}.sub{color:var(--muted);font-size:12px;margin-top:7px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.card{background:white;border:1px solid var(--line);overflow:hidden}
+.photo{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:#eee6df}
+.photo-wrap{position:relative;background:#f1e9e3}
+.tag{position:absolute;top:12px;left:12px;background:#fffaf5;padding:7px 10px;font-size:9px;letter-spacing:.12em;text-transform:uppercase}
+.cardbody{padding:17px}
+.card h3{font:24px Georgia,serif;font-weight:400;margin:0 0 8px}
+.desc{color:var(--muted);font-size:12px;line-height:1.6;margin:0 0 14px}
+.items{display:grid;gap:9px;margin:13px 0}
+.item{display:flex;gap:10px;align-items:center;border-top:1px solid #f0ebe7;padding-top:9px}
+.thumb{width:55px;height:68px;object-fit:cover;background:#f1e9e3;flex-shrink:0}
+.itemname{font-size:12px;line-height:1.4;flex:1}.price{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+.shop{display:block;text-align:center;background:var(--ink);color:#fff;text-decoration:none;padding:12px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-top:15px}
+.shop:hover{background:#6f5950}
+.notice{border:1px solid var(--line);padding:17px;background:#fffaf5;color:#6c625c;font-size:12px;line-height:1.6;margin:22px 0}
+.status{font-size:12px;color:var(--muted);padding:12px 0}.spinner{display:inline-block;width:12px;height:12px;border:2px solid #ddd;border-top-color:#55433c;border-radius:50%;animation:spin .8s linear infinite;vertical-align:middle;margin-right:7px}@keyframes spin{to{transform:rotate(360deg)}}
+footer{text-align:center;padding:30px 5vw;border-top:1px solid var(--line);font-size:11px;color:var(--muted);line-height:1.8}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.cardbody{padding:13px}.card h3{font-size:21px}}
+@media(max-width:520px){header{padding:18px 5vw}.logo{font-size:21px}.hero{padding:43px 6vw 30px}.grid{grid-template-columns:1fr;gap:18px}.photo{aspect-ratio:4/4.5}.cardbody{padding:16px}h2{font-size:28px}.sectionhead{align-items:start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header><a href="https://www.bashclothing.co/" class="logo">BASH<small>CLOTHING</small></a><a href="https://www.bashclothing.co/collections/all">Shop all ↗</a></header>
+<section class="hero">
+<div class="kicker">Your wardrobe, styled</div>
+<h1>Find your next<br><em>“where’s that from?”</em> outfit.</h1>
+<p>A little Pinterest energy, a lot of Bash. Explore outfit ideas built around real pieces from our collection — then shop the pieces you love.</p>
+<a class="textlink" href="https://www.bashclothing.co/collections/best-sellers">Discover Bash bestsellers ↓</a>
+</section>
+<nav class="pills" id="filters">
+<button class="pill active" data-filter="all">All looks</button>
+<button class="pill" data-filter="romantic">Romantic girl</button>
+<button class="pill" data-filter="minimal">Clean & minimal</button>
+<button class="pill" data-filter="date">Date night</button>
+<button class="pill" data-filter="work">Work & polished</button>
+<button class="pill" data-filter="sets">Easy co-ords</button>
+</nav>
+<main>
+<div class="sectionhead"><div><h2>Curated for your mood</h2><div class="sub">Real Bash product catalogue · prices and photos load from the public store feed when available</div></div></div>
+<div id="status" class="status"><span class="spinner"></span>Loading real Bash products…</div>
+<div id="looks" class="grid"></div>
+<div class="notice"><strong>A note on live product data:</strong> this page tries to load public product data from Bash's Shopify store. If the store blocks browser requests from GitHub Pages, the lookbook will show a fallback set of real product links instead of inventing product photos. For a fully reliable live catalogue, connect a Shopify product feed or export product data and image URLs into this repository.</div>
+</main>
+<footer><div style="font-family:Georgia,serif;letter-spacing:.2em;font-size:18px;color:#292622">BASH CLOTHING</div><p>Style it your way. Shop the real pieces at <a href="https://www.bashclothing.co/">bashclothing.co</a>.</p></footer>
+<script>
+const STORE='https://www.bashclothing.co';
+const fallbackProducts=[
+ {title:'Celeste Set by Bash in Pink',price:69,url:'/products/celeste-set-by-bash-in-pink',image:'',tags:'sets romantic pink'},
+ {title:'Celeste Set by Bash in Blue',price:69,url:'/products/celeste-set-by-bash-in-blue',image:'',tags:'sets minimal blue'},
+ {title:'Celeste Set by Bash in White',price:69,url:'/products/celeste-set-by-bash-in-white',image:'',tags:'sets minimal white'},
+ {title:'Cam Faux 2 Layer Mesh Lace Camisole Top in Pink',price:54,url:'/products/cam-faux-2-layer-mesh-lace-camisole-top-in-pink',image:'',tags:'romantic pink'},
+ {title:'Jeanna V Neck Mid Sleeve Top in White',price:52,url:'/collections/tops',image:'',tags:'minimal work white'},
+ {title:'Lucy V Neck Short Sleeve Top in Pink',price:49,url:'/collections/tops',image:'',tags:'romantic pink'},
+ {title:'Calista Polkadot Midi Skirt in Brown',price:62,url:'/collections/all',image:'',tags:'romantic minimal brown'},
+ {title:'Anessa Deep V Satin Maxi Dress with Sash in Green',price:109,url:'/collections/dresses',image:'',tags:'date romantic green'},
+ {title:'Dream Frost Bustier Corset Mini Bubble Dress in White',price:129,url:'/collections/dresses',image:'',tags:'date romantic white'},
+ {title:'Zolini Lace Camisole Top in Cream',price:56,url:'/collections/best-sellers',image:'',tags:'romantic minimal cream'},
+ {title:'Kova Queen Anne Neckline Long Sleeve Top in Black',price:56,url:'/collections/tops',image:'',tags:'work minimal black'},
+ {title:'Porsi Midi Skirt in White',price:49,url:'/collections/all',image:'',tags:'minimal work white'}
+];
+const looksData=[
+ {title:'Soft Girl Sunday',tag:'ROMANTIC GIRL',filter:'romantic',desc:'Soft colour, delicate details and an easy, feminine feel for coffee dates and slow weekends.',items:['Celeste Set by Bash in Pink','Cam Faux 2 Layer Mesh Lace Camisole Top in Pink','Calista Polkadot Midi Skirt in Brown']},
+ {title:'Quietly Put Together',tag:'CLEAN & MINIMAL',filter:'minimal',desc:'Clean shapes and light neutrals for the kind of outfit that always looks considered.',items:['Celeste Set by Bash in White','Jeanna V Neck Mid Sleeve Top in White','Zolini Lace Camisole Top in Cream']},
+ {title:'Dinner, Then Dessert',tag:'DATE NIGHT',filter:'date',desc:'A little satin, a little drama — an easy outfit mood for dinner plans and special nights.',items:['Anessa Deep V Satin Maxi Dress with Sash in Green','Dream Frost Bustier Corset Mini Bubble Dress in White','Celeste Set by Bash in Blue']},
+ {title:'The Polished One',tag:'WORK & POLISHED',filter:'work',desc:'Simple, refined pieces to take you from work mode to after-work plans.',items:['Kova Queen Anne Neckline Long Sleeve Top in Black','Jeanna V Neck Mid Sleeve Top in White','Porsi Midi Skirt in White']},
+ {title:'One-and-Done Dressing',tag:'EASY CO-ORDS',filter:'sets',desc:'Matching pieces make getting dressed feel effortless. Pick your favourite colour mood.',items:['Celeste Set by Bash in Blue','Celeste Set by Bash in Pink','Celeste Set by Bash in White']}
+];
+let products=[...fallbackProducts];
+const money=n=>'RM'+Number(n||0).toFixed(2);
+function slug(s){return s.toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
+function findProduct(name){return products.find(p=>p.title.toLowerCase()===name.toLowerCase())||products.find(p=>p.title.toLowerCase().includes(name.toLowerCase().split(' in ')[0]))||fallbackProducts.find(p=>p.title===name)||{title:name,price:0,url:'/collections/all',image:''}}
+function imageMarkup(p,cls='photo'){return p.image?`<img class="${cls}" loading="lazy" src="${p.image}" alt="${p.title}">`:`<div class="${cls}" style="display:flex;align-items:center;justify-content:center;padding:22px;text-align:center;color:#8d7b70;font:16px Georgia,serif"><span>${p.title}<br><small style="font:10px Arial;display:block;margin-top:8px">View product on Bash ↗</small></span></div>`}
+function render(filter='all'){
+ const root=document.getElementById('looks');root.innerHTML='';
+ const list=looksData.filter(l=>filter==='all'||l.filter===filter);
+ list.forEach((look,i)=>{
+  const ps=look.items.map(findProduct);const hero=ps[0];const price=ps.reduce((sum,p)=>sum+Number(p.price||0),0);
+  const card=document.createElement('article');card.className='card';
+  card.innerHTML=`<div class="photo-wrap">${imageMarkup(hero)}<span class="tag">${look.tag}</span></div><div class="cardbody"><h3>${look.title}</h3><p class="desc">${look.desc}</p><div class="items">${ps.map(p=>`<div class="item">${imageMarkup(p,'thumb')}<div class="itemname">${p.title}<span class="price">${p.price?money(p.price):'See current price'} · <a href="${STORE+p.url}" target="_blank" rel="noopener" style="color:inherit">Shop item ↗</a></span></div></div>`).join('')}</div><div style="font-size:12px;display:flex;justify-content:space-between"><span>Look total*</span><strong>${money(price)}</strong></div><a class="shop" href="${STORE}/collections/all" target="_blank" rel="noopener">Shop this look ↗</a></div>`;
+  root.appendChild(card);
+ });
+}
+document.querySelectorAll('.pill').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.pill').forEach(b=>b.classList.toggle('active',b===btn));render(btn.dataset.filter)}));
+render();
+async function loadStore(){
+ // Shopify's public products JSON endpoint is attempted; some stores/CDN settings may block cross-origin browser access.
+ const urls=[STORE+'/products.json?limit=250',STORE+'/collections/best-sellers/products.json?limit=100'];
+ for(const endpoint of urls){
+  try{
+   const response=await fetch(endpoint,{mode:'cors'});
+   if(!response.ok)continue;
+   const data=await response.json();
+   const list=data.products||[];
+   if(!list.length)continue;
+   const live=list.map(p=>({title:p.title,price:p.variants?.[0]?.price||0,url:'/products/'+p.handle,image:p.images?.[0]?.src||'',tags:(p.tags||[]).join(' ').toLowerCase()}));
+   // Preserve known catalogue entries and prefer actual live data when a matching product is returned.
+   products=[...live,...fallbackProducts.filter(f=>!live.some(p=>p.title.toLowerCase()===f.title.toLowerCase()))];
+   looksData.forEach(l=>l.items=l.items.map(n=>{const match=products.find(p=>p.title.toLowerCase()===n.toLowerCase());return match?match.title:n}));
+   document.getElementById('status').textContent='Loaded '+live.length+' real Bash products. Images and prices are from the public store catalogue.';
+   render(document.querySelector('.pill.active')?.dataset.filter||'all');return;
+  }catch(e){}
+ }
+ document.getElementById('status').textContent='Showing curated Bash product links. The store blocked direct browser catalogue access, so product photos could not be auto-loaded in this GitHub Pages version.';
+}
+loadStore();
+</script>
+</body>
+</html>
